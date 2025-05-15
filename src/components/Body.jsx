@@ -11,12 +11,12 @@ const Body = () => {
   const dispatch = useDispatch();
   const userData = useSelector(state=>state.user)
   const navigate = useNavigate();
-  const fetchProfile = ()=>{
+  const fetchProfile = async()=>{
     if(userData)return null;
     try{
-      const response =  axios.get(BASE_URL+'/profile/view',{ withCredentials: true });
+      const response =  await axios.get(BASE_URL+'/profile/view',{ withCredentials: true });
       dispatch(addUser(response.data));
-      console.log(response);
+
     }
     catch(err){
       if(err.status === 404){
