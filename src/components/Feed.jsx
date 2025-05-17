@@ -26,6 +26,9 @@ const Feed = () => {
     getFeeds();
   },[])
 
+  if(!feeds) return 
+  if(feeds.length <= 0) return <h1>no feeds are available</h1>
+
   return (
 
     feeds && 
