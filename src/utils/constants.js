@@ -1,1 +1,1 @@
-export const BASE_URL = '/api'
+export const BASE_URL = location.hostname==='localhost'? 'http://127.0.0.1:9090': '/api'
