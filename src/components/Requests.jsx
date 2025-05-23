@@ -16,7 +16,7 @@ const Requests = () => {
                 {withCredentials:true});
                 dispatch(removeConnection(id))
 
-            console.log(response)
+            // console.log(response)
         }catch(err){
             console.log(err)
         }
@@ -28,7 +28,7 @@ const Requests = () => {
         const response = await axios.get(BASE_URL+'/user/requests/received',{
             withCredentials:true
         })
-        console.log(response.data)
+        // console.log(response.data)
         dispatch(addRequest(response.data.data))}
         catch(err){
             console.log(err)
@@ -39,7 +39,7 @@ const Requests = () => {
     useEffect(()=>{
         fetchConnectionRequest()
     },[])
-    console.log("connections",connectionRequest)
+    // console.log("connections",connectionRequest)
     if(!connectionRequest){return null}
     if(connectionRequest.length===0){return null}
     

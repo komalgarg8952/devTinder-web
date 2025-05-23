@@ -7,7 +7,7 @@ import { removeUser } from '../utils/userSlice';
 
 const Navbar = () => {
   const user = useSelector(state=>state.user);
-  console.log(user)
+  // console.log(user)
   const dispatch = useDispatch();
   const navigate =useNavigate();
 
@@ -31,6 +31,7 @@ const Navbar = () => {
     </div>
     <div className="flex gap-2">
       {user&&<div className="dropdown dropdown-end">
+        <div>{user.firstName}</div>
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-5">
           <div className="w-10 rounded-full ">
             <img
